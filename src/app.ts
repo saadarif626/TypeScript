@@ -61,9 +61,9 @@ console.log(processInput("hello"));
 
   let carDoor= new Car("suzuki",'alto',2024,4)
   console.log(carDoor)
+
   class Motorcycle extends vehicle {
     hasSidecar: boolean;
-  
     constructor(make: string, model: string, year: number, hasSidecar: boolean) {
       super(make, model, year);
       this.hasSidecar = hasSidecar;
@@ -112,7 +112,7 @@ console.log(processInput("hello"));
       if (amount > this.balance) {
         throw new Error("Insufficient funds for withdrawal");
       }
-      this.balance = amount;
+      this.balance -= amount;
     }
   }
   const account = new BankAccount("1234567890", 1000);
@@ -179,3 +179,74 @@ class Rectangle extends Shape {
 const rectangle = new Rectangle("blue", 4, 7);
 console.log(`Rectangle color: ${rectangle.getColor()}`); 
 console.log(`Rectangle area: ${Math.round(rectangle.calculatedArea())}`);
+
+
+  // *****************************~Q#6~**************************
+
+  interface Product{
+    id:number,
+    price:number,
+    name:string,
+    category:string
+  }
+  function newProduct(obj:Product):Product{
+     return(obj)
+  }
+
+  let newbuying:Product={
+     id:67,
+    price:800,
+    name:"Rolex",
+    category:"Watch",
+  }
+  let newlyProduct=newProduct(newbuying)
+  console.log(newlyProduct)
+
+  // *****************************~Q#7~**************************
+
+class Employee{
+  constructor(public name:string,public salary:number){
+    this.name=name;
+    this.salary=salary
+  }
+ get getDetails(){
+  return(`${this.name},${this.salary}`)
+ }
+}
+class develpor extends Employee{
+  constructor(public name:string,public salary:number,public programmingLanguage:string){
+    super(name,salary)
+    this.programmingLanguage=programmingLanguage;
+  }
+  get getDetails(){
+    return(`${super.getDetails},${this.programmingLanguage}`)
+   }
+}
+class designer extends Employee{
+  constructor(public name:string,public salary:number,public tools:string){
+    super(name,salary)
+    this.tools=tools;
+  }
+  get getDetails(){
+    return(`${super.getDetails},${this.tools}`)
+   }
+}
+ let newDesigner= new designer("saad",4500,"illustrator")
+ console.log(newDesigner)
+ let newdeveloper=new develpor("alex",80000,"JavaScript")
+ console.log(newdeveloper)
+
+ 
+  // *****************************~Q#8~**************************
+   class Students{
+    public name:string
+    private grade:number[]
+    protected school:string
+    readonly stdId:number
+    constructor(name:string,grade:number[],school:string,stdId:number){
+      this.name=name;
+      this.grade=[];
+      this.school=school,
+      this.stdId=stdId
+    }
+   }

@@ -82,7 +82,7 @@ class BankAccount {
         if (amount > this.balance) {
             throw new Error("Insufficient funds for withdrawal");
         }
-        this.balance = amount;
+        this.balance -= amount;
     }
 }
 const account = new BankAccount("1234567890", 1000);
@@ -134,4 +134,64 @@ class Rectangle extends Shape {
 const rectangle = new Rectangle("blue", 4, 7);
 console.log(`Rectangle color: ${rectangle.getColor()}`);
 console.log(`Rectangle area: ${Math.round(rectangle.calculatedArea())}`);
+function newProduct(obj) {
+    return (obj);
+}
+let newbuying = {
+    id: 67,
+    price: 800,
+    name: "Rolex",
+    category: "Watch",
+};
+let newlyProduct = newProduct(newbuying);
+console.log(newlyProduct);
+// *****************************~Q#7~**************************
+class Employee {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+        this.name = name;
+        this.salary = salary;
+    }
+    get getDetails() {
+        return (`${this.name},${this.salary}`);
+    }
+}
+class develpor extends Employee {
+    constructor(name, salary, programmingLanguage) {
+        super(name, salary);
+        this.name = name;
+        this.salary = salary;
+        this.programmingLanguage = programmingLanguage;
+        this.programmingLanguage = programmingLanguage;
+    }
+    get getDetails() {
+        return (`${super.getDetails},${this.programmingLanguage}`);
+    }
+}
+class designer extends Employee {
+    constructor(name, salary, tools) {
+        super(name, salary);
+        this.name = name;
+        this.salary = salary;
+        this.tools = tools;
+        this.tools = tools;
+    }
+    get getDetails() {
+        return (`${super.getDetails},${this.tools}`);
+    }
+}
+let newDesigner = new designer("saad", 4500, "illustrator");
+console.log(newDesigner);
+let newdeveloper = new develpor("alex", 80000, "JavaScript");
+console.log(newdeveloper);
+// *****************************~Q#8~**************************
+class Students {
+    constructor(name, grade, school, stdId) {
+        this.name = name;
+        this.grade = [];
+        this.school = school,
+            this.stdId = stdId;
+    }
+}
 //# sourceMappingURL=app.js.map
